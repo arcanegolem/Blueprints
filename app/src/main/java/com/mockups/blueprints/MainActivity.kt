@@ -3,7 +3,6 @@ package com.mockups.blueprints
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -15,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.mockups.blueprints.blocks.CollapsableBox
+import com.mockups.blueprints.blocks.ColoredBlock
 import com.mockups.blueprints.ui.theme.BlueprintsTheme
 
 class MainActivity : ComponentActivity() {
@@ -49,8 +49,6 @@ fun TestingCmp() {
             text = "Hello!"
         )
     }*/
-
-
     CollapsableBox(
         color = MaterialTheme.colorScheme.primary,
         cornerRounding = 5.dp,
