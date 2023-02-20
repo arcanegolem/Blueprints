@@ -13,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.mockups.blueprints.blocks.CollapsibleBox
 import com.mockups.blueprints.blocks.ColoredBlock
 import com.mockups.blueprints.ui.theme.BlueprintsTheme
 
@@ -36,13 +37,28 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun TestingCmp() {
-    ColoredBlock(
+    /*ColoredBlock(
         color = MaterialTheme.colorScheme.primary,
         backgroundColor = MaterialTheme.colorScheme.secondary,
         colorPadding = 5.dp,
         shape = RoundedCornerShape(5.dp),
         elevation = 4.dp
     ) {
+        Text(
+            modifier = Modifier.padding(10.dp),
+            text = "Hello!"
+        )
+    }*/
+    CollapsibleBox(
+        color = MaterialTheme.colorScheme.primary,
+        shape = RoundedCornerShape(12.dp),
+        elevation = 4.dp,
+        content2 = {
+            Text(
+                modifier = Modifier.padding(10.dp),
+                text = "Icons support additional sizes: 20dp, 40dp, and 48dp, with 20dp primarily for desktop, dense layouts, and small scale visuals, and 40dp and 48dp optimized for display or headline type, plus larger screen sizes.  "
+            )
+        }) {
         Text(
             modifier = Modifier.padding(10.dp),
             text = "Hello!"
