@@ -13,24 +13,32 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.compose.rememberNavController
 import com.mockups.blueprints.animation.LoadingScreen
 import com.mockups.blueprints.blocks.CollapsableBox
 import com.mockups.blueprints.blocks.ColoredBlock
+import com.mockups.blueprints.navigation.Navigator
+import com.mockups.blueprints.navigation.Screen
 import com.mockups.blueprints.ui.theme.BlueprintsTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            val navController = rememberNavController()
+
             BlueprintsTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Column(modifier = Modifier.padding(10.dp)) {
-                        LoadingScreen()
-                    }
-                }
+//                Surface(
+//                    modifier = Modifier.fillMaxSize(),
+//                    color = MaterialTheme.colorScheme.background
+//                ) {
+//                    Column(modifier = Modifier
+//                        .fillMaxSize()
+//                        .padding(10.dp)) {
+//                        LoadingScreen(navController = navController, mainScreenRoute = Screen.MainScreen.route)
+//                    }
+//                }
+                Navigator(navController = navController)
             }
         }
     }
