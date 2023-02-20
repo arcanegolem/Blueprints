@@ -3,6 +3,7 @@ package com.mockups.blueprints
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -13,8 +14,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.mockups.blueprints.blocks.CollapsibleBox
-import com.mockups.blueprints.blocks.ColoredBlock
+import com.mockups.blueprints.blocks.CollapsableBox
 import com.mockups.blueprints.ui.theme.BlueprintsTheme
 
 class MainActivity : ComponentActivity() {
@@ -49,11 +49,13 @@ fun TestingCmp() {
             text = "Hello!"
         )
     }*/
-    CollapsibleBox(
+
+
+    CollapsableBox(
         color = MaterialTheme.colorScheme.primary,
-        shape = RoundedCornerShape(12.dp),
+        cornerRounding = 5.dp,
         elevation = 4.dp,
-        content2 = {
+        enlargedContent = {
             Text(
                 modifier = Modifier.padding(10.dp),
                 text = "Icons support additional sizes: 20dp, 40dp, and 48dp, with 20dp primarily for desktop, dense layouts, and small scale visuals, and 40dp and 48dp optimized for display or headline type, plus larger screen sizes.  "
