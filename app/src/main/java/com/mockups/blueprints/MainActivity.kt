@@ -13,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.mockups.blueprints.animation.LoadingScreen
 import com.mockups.blueprints.blocks.CollapsableBox
 import com.mockups.blueprints.blocks.ColoredBlock
 import com.mockups.blueprints.ui.theme.BlueprintsTheme
@@ -27,7 +28,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     Column(modifier = Modifier.padding(10.dp)) {
-                        TestingCmp()
+                        LoadingScreen()
                     }
                 }
             }
