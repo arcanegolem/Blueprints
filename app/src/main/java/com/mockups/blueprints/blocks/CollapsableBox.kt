@@ -32,13 +32,26 @@ fun CollapsableBox(
     collapsedContent: @Composable () -> Unit
 ) {
     var isExpanded by rememberSaveable { mutableStateOf(false) }
-    val dpShape by animateDpAsState(targetValue = if (isExpanded) cornerRounding else cornerRounding * 4)
+    val largeCornerRounding = cornerRounding * 4
+    val dpShape by animateDpAsState(targetValue = if (isExpanded) cornerRounding else largeCornerRounding)
 
     Surface(
         modifier = modifier
             .fillMaxWidth()
-            .shadow(elevation = elevation, shape = RoundedCornerShape(dpShape))
-            .clip(RoundedCornerShape(dpShape)),
+            .shadow(
+                elevation = elevation,
+                shape = RoundedCornerShape(
+                    topStart = largeCornerRounding,
+                    topEnd = largeCornerRounding,
+                    bottomEnd = dpShape,
+                    bottomStart = dpShape)
+            )
+            .clip(shape = RoundedCornerShape(
+                topStart = largeCornerRounding,
+                topEnd = largeCornerRounding,
+                bottomEnd = dpShape,
+                bottomStart = dpShape)
+            ),
         color = color
     ) {
         Column {
