@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.Dp
 
 @Composable
 fun ColoredBlock(
-    modifier: Modifier,
+    modifier: Modifier = Modifier,
     color: Color,
     backgroundColor: Color,
     colorPadding : Dp,
